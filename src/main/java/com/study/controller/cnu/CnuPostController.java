@@ -78,23 +78,16 @@ public class CnuPostController {
         return "post/view";
     }
 
-    @RequestMapping("/post")
-    public String delete(int postId, String password) {
-    	CnuPost cnuPost = new CnuPost();
-    	cnuPost.setPassword(password);
-    	cnuPost.setPostId(postId);
-    	cnuPost.setIsDel(true);
+    @RequestMapping(value="post", method = RequestMethod.DELETE)
+    public String delete(@RequestParam String password) {
+    	System.out.println("aaaaaa");
+    	//CnuPost cnuPost = new CnuPost();
+    	//cnuPost.setPassword(password);
     	
-    	System.out.println(cnuPost.getPassword()+"//"+cnuPost.getPostId());
+    	//System.out.println(cnuPost.getPassword()+"//"+cnuPost.getPostId());
     	
-    	//해당 아이디의 기존 비밀번호를 받아서 처리
-    	String checkPassword;
-
-    	//checkPassword가 null이면 에러 메시지 띄우고, null이 아닐 경우 checkPassword와 파라미터로 받은 password가 일치하는지 확인
-    	
-    	
-    	
-        return "post/view";
+    
+        return "redirect:/post";
     }
 
 }
