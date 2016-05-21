@@ -29,12 +29,10 @@
 					<th scope="col">제목</th>
 					<th scope="col">작성자</th>
 					<th scope="col">작성일</th>
-					<th scope="col">삭제비밀번호</th>
-					<th scope="col">삭제</th>
 				</tr>
 				</thead>
 				<tbody>
-				<form method="delete" id="indexForm" traget="" onsubmit="">
+				
 				<c:forEach items="${cnuPostList}" var="cnuPost">
 					<tr>
 						<td>${cnuPost.postId}</td>
@@ -43,19 +41,20 @@
 						</td>
 						<td>${cnuPost.author}</td>
 						<td>실전코딩 21조</td>
-						<td>
-							<input type="password" name="password" id="password_delete" class="itx n_p">
-						</td>
-						<td>
-							<button onclick="removeThis()"> 게시물 삭제 </button>
 						</td>
 					</tr>
 				</c:forEach>
-				</form>
 				</tbody>
 			</table>
 		</div><!-- ContentsTable End -->
 		<div style="padding-top: 25px;">
+			<form action="post/index" method="get" id="removeForm" traget="" onsubmit="">
+				<lable style="color:white">삭제하고자 하는 게시물의 번호</label>
+				<input name="postId" id="postId_delete" class="itx n_p">
+				<lable style="color:white">삭제하고자 하는 게시물의 비밀번호</label>
+				<input type="password" name="password" id="password_delete" class="itx n_p">
+				<button onclick="removeThis()"> 게시물 삭제 </button>
+			</form>
 			<a href="#" class="btn btn-primary right">글쓰기</a>
 		</div>
 	</div>
@@ -66,7 +65,7 @@
 <script type="text/javascript">
 
 	function removeThis(){
-		document.getElementById("indexForm").submit();
+		document.getElementById("removeForm").submit();
 		return false;
 	}
 	
