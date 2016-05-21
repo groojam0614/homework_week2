@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<body>
+<body onload="isNotCorrectPassword()">
 <div class="main">
 	<div class="border-box">
 		<div class="contents-table"><!-- ContentsTable Start -->
@@ -30,6 +30,7 @@
 					<th scope="col">제목</th>
 					<th scope="col">작성자</th>
 					<th scope="col">작성일</th>
+					<th scope="col">삭제</th>
 				</tr>
 				</thead>
 				<tbody>
@@ -40,7 +41,7 @@
 							<a href="#">${cnuPost.title}</a>
 						</td>
 						<td>${cnuPost.author}</td>
-						<td>Robin Kim</td>
+						<td>실전코딩 21조</td>
 					</tr>
 				</c:forEach>
 				</tbody>
@@ -51,8 +52,12 @@
 		</div>
 	</div>
 </div>
-</body>
-
 
 </body>
+</body>
+<script>
+	function isNotCorrectPassword(){
+			
+	}
+</script>
 </html>
