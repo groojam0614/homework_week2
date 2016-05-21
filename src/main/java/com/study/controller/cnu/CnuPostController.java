@@ -78,12 +78,14 @@ public class CnuPostController {
         return "post/view";
     }
 
-    @RequestMapping("/delete")
+    @RequestMapping("/post")
     public String delete(int postId, String password) {
     	CnuPost cnuPost = new CnuPost();
     	cnuPost.setPassword(password);
     	cnuPost.setPostId(postId);
     	cnuPost.setIsDel(true);
+    	
+    	System.out.println(cnuPost.getPassword()+"//"+cnuPost.getPostId());
     	
     	//해당 아이디의 기존 비밀번호를 받아서 처리
     	String checkPassword;

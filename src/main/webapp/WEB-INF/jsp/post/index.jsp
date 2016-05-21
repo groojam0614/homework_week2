@@ -12,7 +12,6 @@
 </head>
 <body>
 
-<body onload="isNotCorrectPassword()">
 <div class="main">
 	<div class="border-box">
 		<div class="contents-table"><!-- ContentsTable Start -->
@@ -42,6 +41,9 @@
 						</td>
 						<td>${cnuPost.author}</td>
 						<td>실전코딩 21조</td>
+						<td>
+							<button onclick="removeThis()"> 게시물 삭제 </button>
+						</td>
 					</tr>
 				</c:forEach>
 				</tbody>
@@ -55,7 +57,15 @@
 
 </body>
 </body>
-<script>
+<script type="text/javascript">
+
+	function removeThis(){
+		var inputPwd = prompt("게시물의 비밂번호를 입력해주세요");
+		if(inputPwd !=null){
+			alert("우아");
+		}
+	}
+	
 	function isNotCorrectPassword(){
 			
 	}
